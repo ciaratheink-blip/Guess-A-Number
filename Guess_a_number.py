@@ -8,15 +8,143 @@ TEXT_SPEED = {
     "fast": 0.01
 }
 
-# controls speed of narration and adds a pause after each line. 
-# use type_text(text, speed, pause) instead of print() for dialogue
-def type_text(text, speed=0.04, pause=0.3):
-    for character in text:
-        print(character, end="", flush=True)
-        time.sleep(speed)
+# Dialogue dictionary (first scene written)
+dialogue = {
+    "death_reboot": {
+        "text": r"""
++----------------------------+
+|         DEATHLOGIC         |
+|         INITIALISED        |
++----------------------------+
+""",
+        "speed": "fast"
+    },
 
-    print()
-    time.sleep(pause)
+    "levels": {
+        "level_1": {
+            "intro": {
+                "guess": {
+                    "text": "Guess the number?",
+                    "speed": "normal"
+                },
+                "warning": {
+                    "text": "Enter whole numerals only or face the consequences.",
+                    "speed": "slow"
+                }
+            },
+
+            "number_statement": {
+                "normal": {
+                    "text": "You have {elephant_number} elephants.",
+                    "speed": "normal"
+                },
+                "shiny": {
+                    "text": "You have {elephant_number} {elephant_state} elephants.",
+                    "speed": "normal"
+                }
+            },
+
+            "number_comment": {
+                "too_high": {
+                    "text": "What a ridiculous number of elephants.",
+                    "speed": "slow"
+                },
+                "too_low": {
+                    "text": "That is unfortunate for you.",
+                    "speed": "slow"
+                }
+            },
+
+            "purpose": {
+                "text": "It's good to have a purpose in life.",
+                "speed": "normal"
+            },
+
+            "invalid_integer": {
+                "warning_1": {
+                    "text": "I said numerals only.",
+                    "speed": "normal"
+                },
+                "warning_2": {
+                    "text": "Using the digits 1 through 9. If you can count that high.",
+                    "speed": "slow"
+                },
+                "warning_3": {
+                    "text": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "Pick at least one of the above numbers."
+                    ],
+                    "speed": "extremely_slow"
+                }
+            },
+
+            "too_high_warning": {
+                "warning_1": {
+                    "text": "Try a more sensible number.",
+                    "speed": "normal"
+                },
+                "warning_2": {
+                    "text": "Feeling ambitious, aren't we?",
+                    "speed": "normal"
+                },
+                "lower": {
+                    "text": "LOWER",
+                    "speed": "slow"
+                },
+                "ignored_lower": {
+                    "text": "You're not even trying, are you?",
+                    "speed": "fast"
+                }
+            }
+        }
+    },
+
+    "endings": {
+        "float": {},
+        "string": [
+        {
+            "speed": "normal",
+            "text": (
+                "You are playing a character whose perception of reality relies on an integer.\n"
+                'You supplied "{elephant_number}".\n'
+                'Your tiny little 2-bit brain cannot parse "{elephant_number}" elephants.\n'
+                "And yet they're standing right there."
+            ),
+            "pause": 2
+        },
+        {
+            "speed": "normal",
+            "text": "You stare at them for three days, trying to comprehend their quantity."
+        },
+        {
+            "speed": "slow",
+            "text": "You forget to eat.\nYou forget to sleep."
+        },
+        {
+            "speed": "normal",
+            "text": (
+                "The elephants wander off.\n"
+                "Perhaps you should have picked a better number."
+            )
+        }
+    ],
+        "zero_elephants": {}
+    }
+}
+
+# controls speed of narration and adds a pause after each line. 
+# use print_lines([speed], [line], pause) instead of print() for dialogue
+def print_lines(lines, speed="normal", pause=0.3):
+    for line in lines:
+        type_text(line, speed, pause)
 
 
 
