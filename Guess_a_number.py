@@ -1,6 +1,8 @@
 import time
 import data_dictionaries as data
 
+elephant_number = 0
+elephant_state = "normal"
 # 
 def type_text(text, speed="normal", pause=0.3):
     delay = data.TEXT_SPEED.get(speed, 0.04)
@@ -16,13 +18,13 @@ def type_text(text, speed="normal", pause=0.3):
 # Use print_lines(dialogue_chunks) instead of print() for narration.
 def print_lines(chunks):
     for chunk in chunks:
-        text = chunk["text"]
+        text = text = chunk["text"].format(elephant_number=elephant_number)
         speed = chunk.get("speed", "normal")
-        pause = chunk.get("pause", 0.3)
+        pause = chunk.get("pause", "normal")
 
         type_text(text, speed, data.TEXT_PAUSE[pause])
 
-print_lines(dialogue["endings"]["string"])
+print_lines(data.dialogue["endings"]["string"])
 
 
 
