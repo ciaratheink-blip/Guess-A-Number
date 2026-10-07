@@ -12,8 +12,7 @@ def type_text(text, speed="normal", pause=0.3):
     print()
     time.sleep(pause)
 
-# controls speed of narration and adds a pause after each line. 
-# Prints dialogue using speeds and pauses stored in the dialogue dictionary.
+
 # Use print_lines(dialogue_chunks) instead of print() for narration.
 def print_lines(chunks):
     for chunk in chunks:
@@ -21,7 +20,7 @@ def print_lines(chunks):
         speed = chunk.get("speed", "normal")
         pause = chunk.get("pause", 0.3)
 
-        type_text(text, speed, pause)
+        type_text(text, speed, data.TEXT_PAUSE[pause])
 
 print_lines(dialogue["endings"]["string"])
 

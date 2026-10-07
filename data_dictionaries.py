@@ -1,4 +1,4 @@
-# Dialog speed dictionry 
+# Dialog character speed dictionry 
 # How many seconds between characters.
 TEXT_SPEED = {
     "extremely_slow": 0.2, 
@@ -7,6 +7,13 @@ TEXT_SPEED = {
     "fast": 0.01
 }
 
+# Dialog pause speed dictionry 
+# How many seconds between chunks.
+TEXT_PAUSE = {
+    "normal": 0.3,
+    "long": 1.5,
+    "concerning": 4.0
+}
 
 # Dialogue dictionary
 # Lists are used for dialogue played in sequence.
@@ -98,32 +105,35 @@ dialogue = {
     "endings": {
         "float": [],
         "string": [
-            {
-                "speed": "normal",
-                "text": (
-                    "You are playing a character whose perception of reality relies on an integer.\n"
-                    'You supplied "{elephant_number}".\n'
-                    'Your tiny little 2-bit brain cannot parse "{elephant_number}" elephants.\n'
-                    "And yet they're standing right there."
-                ),
-                "pause": 2
-            },
-            {
-                "speed": "normal",
-                "text": "You stare at them for three days, trying to comprehend their quantity."
-            },
-            {
-                "speed": "slow",
-                "text": "You forget to eat.\nYou forget to sleep."
-            },
-            {
-                "speed": "normal",
-                "text": (
-                    "The elephants wander off.\n"
-                    "Perhaps you should have picked a better number."
-                )
-            }
-        ],
+    {
+        "speed": "normal",
+        "text": (
+            "You are playing a character whose perception of reality relies on an integer.\n"
+            'You supplied "{elephant_number}".\n'
+            'Your tiny little 2-bit brain cannot parse "{elephant_number}" elephants.\n'
+            "And yet they're standing right there."
+        ),
+        "pause": "concerning"
+    },
+    {
+        "speed": "normal",
+        "text": "You stare at them for three days, trying to comprehend their quantity.",
+        "pause": "long"
+    },
+    {
+        "speed": "slow",
+        "text": "You forget to eat.\nYou forget to sleep.",
+        "pause": "long"
+    },
+    {
+        "speed": "normal",
+        "text": (
+            "The elephants wander off.\n"
+            "Perhaps you should have picked a better number."
+        ),
+        "pause": "normal"
+    }
+],
         "zero_elephants": []
     },
 
