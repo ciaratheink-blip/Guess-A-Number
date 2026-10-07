@@ -1,6 +1,16 @@
 import time
-import data_dictionaries
+import data_dictionaries as data
 
+# 
+def type_text(text, speed="normal", pause=0.3):
+    delay = data.TEXT_SPEED.get(speed, 0.04)
+
+    for character in text:
+        print(character, end="", flush=True)
+        time.sleep(delay)
+
+    print()
+    time.sleep(pause)
 
 # controls speed of narration and adds a pause after each line. 
 # Prints dialogue using speeds and pauses stored in the dialogue dictionary.
@@ -13,10 +23,10 @@ def print_lines(chunks):
 
         type_text(text, speed, pause)
 
+print_lines(dialogue["endings"]["string"])
 
-type_text("Guess the number?")
-type_text("LOWER", 0.15)
-type_text("You have 50 elephants.", 0.01)
+
+
 
 def choose_num_of_elephants(number_of_elephants, elephant):
     enter_num_count_is_int_count = 0
