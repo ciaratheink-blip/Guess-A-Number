@@ -1,21 +1,17 @@
 import time
-
-# speed setting dict for text_type fuction
-TEXT_SPEED = {
-    "extremely_slow": 0.2, 
-    "slow": 0.08,
-    "normal": 0.04,
-    "fast": 0.01
-}
-
+import data_dictionaries
 
 
 # controls speed of narration and adds a pause after each line. 
-# use print_lines([speed], [line], pause) instead of print() for dialogue
-def print_lines(lines, speed="normal", pause=0.3):
-    for line in lines:
-        type_text(line, speed, pause)
+# Prints dialogue using speeds and pauses stored in the dialogue dictionary.
+# Use print_lines(dialogue_chunks) instead of print() for narration.
+def print_lines(chunks):
+    for chunk in chunks:
+        text = chunk["text"]
+        speed = chunk.get("speed", "normal")
+        pause = chunk.get("pause", 0.3)
 
+        type_text(text, speed, pause)
 
 
 type_text("Guess the number?")
