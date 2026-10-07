@@ -1,11 +1,24 @@
 import time
 
-# controls speed of narration
-def type_text(text, speed=0.04):
+# speed setting dict for text_type fuction
+TEXT_SPEED = {
+    "extremely_slow": 0.2, 
+    "slow": 0.08,
+    "normal": 0.04,
+    "fast": 0.01
+}
+
+# controls speed of narration and adds a pause after each line. 
+# use type_text(text, speed, pause) instead of print() for dialogue
+def type_text(text, speed=0.04, pause=0.3):
     for character in text:
         print(character, end="", flush=True)
         time.sleep(speed)
+
     print()
+    time.sleep(pause)
+
+
 
 type_text("Guess the number?")
 type_text("LOWER", 0.15)
