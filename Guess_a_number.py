@@ -3,7 +3,8 @@ import data_dictionaries as data
 
 elephant_number = 0
 elephant_state = "normal"
-# 
+
+#Fetches  
 def type_text(text, speed="normal", pause=0.3):
     delay = data.TEXT_SPEED.get(speed, 0.04)
 
