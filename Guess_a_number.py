@@ -1,3 +1,16 @@
+import time
+
+# controls speed of narration
+def type_text(text, speed=0.04):
+    for character in text:
+        print(character, end="", flush=True)
+        time.sleep(speed)
+    print()
+
+type_text("Guess the number?")
+type_text("LOWER", 0.15)
+type_text("You have 50 elephants.", 0.01)
+
 def choose_num_of_elephants(number_of_elephants, elephant):
     enter_num_count_is_int_count = 0
     enter_num_count_is_bigger_100_count = 0
