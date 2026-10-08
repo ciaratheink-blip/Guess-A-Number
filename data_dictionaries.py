@@ -57,6 +57,11 @@ dialogue = {
                 "too_low": {
                     "text": "That is unfortunate for you.",
                     "speed": "slow"
+                },
+                "invalid": {
+                    "text": "I guess.",
+                    "speed": "slow",
+                    "pause" : "concerning"
                 }
             },
             "purpose": {
@@ -75,7 +80,14 @@ dialogue = {
                 "warning_3": {
                     "text": "1\n2\n3\n4\n5\n6\n7\n8\n9\nPick at least one of the above numbers.",
                     "speed": "extremely_slow"
+                },
+                "accept_invalid": {
+                    "text": "Fine.",
+                    "speed": "fast",
+                    "pause": "concerning"
                 }
+                
+                
             },
             "too_high_warning": {
                 "warning_1": {
@@ -113,21 +125,27 @@ dialogue = {
             'Your tiny little 2-bit brain cannot parse "{elephant_number}" elephants.\n'
             "And yet they're standing right there."
         ),
-        "pause": "concerning"
+        "pause": "long"
     },
     {
         "speed": "normal",
-        "text": "You stare at them for three days, trying to comprehend their quantity.",
+        "text": "You stare at them for three days.",
+        "pause": "concerning"
+    },
+    {
+        "speed": "slow",
+        "text": "You forget to eat.",
         "pause": "long"
     },
     {
         "speed": "slow",
-        "text": "You forget to eat.\nYou forget to sleep.",
+        "text": "You forget to sleep.",
         "pause": "long"
     },
     {
-        "speed": "normal",
+        "speed": "slow",
         "text": (
+            "You can't comprehend their quantity.\n"
             "The elephants wander off.\n"
             "Perhaps you should have picked a better number."
         ),
