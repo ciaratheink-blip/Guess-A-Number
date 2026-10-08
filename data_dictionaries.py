@@ -35,7 +35,7 @@ dialogue = {
             "intro": [
                 {"text": "Guess the number?", "speed": "normal"},
                 {
-                    "text": "Enter whole numerals only or face the consequences.",
+                    "text": "Enter whole positive numerals only or face the consequences.",
                     "speed": "slow"
                 }
             ],
@@ -45,7 +45,7 @@ dialogue = {
                     "speed": "normal"
                 },
                 "shiny": {
-                    "text": "You have {elephant_number} {elephant_state} elephants.",
+                    "text": "You have {elephant_number} {elephant_type} elephants.",
                     "speed": "normal"
                 }
             },
@@ -128,7 +128,7 @@ dialogue = {
         "pause": "long"
     },
     {
-        "speed": "normal",
+        "speed": "extremely_slow",
         "text": "You stare at them for three days.",
         "pause": "concerning"
     },
@@ -144,8 +144,12 @@ dialogue = {
     },
     {
         "speed": "slow",
+        "text": "You can't comprehend their quantity.",
+        "pause": "long"
+    },
+    {
+        "speed": "slow",
         "text": (
-            "You can't comprehend their quantity.\n"
             "The elephants wander off.\n"
             "Perhaps you should have picked a better number."
         ),
