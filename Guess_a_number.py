@@ -4,7 +4,8 @@ import data_dictionaries as data
 elephant_number = 0
 elephant_state = "normal"
 
-#Fetches  
+# Prints text one character at a time at a chosen speed,
+# then pauses before allowing the next line to print. 
 def type_text(text, speed="normal", pause=0.3):
     delay = data.TEXT_SPEED.get(speed, 0.04)
 
@@ -15,15 +16,16 @@ def type_text(text, speed="normal", pause=0.3):
     print()
     time.sleep(pause)
 
-
+# Retrieves dialogue text and its speed/pause settings.
+# Formats dynamic values and sends each line to type_text().
 # Use print_lines(dialogue_chunks) instead of print() for narration.
 def print_lines(chunks):
     for chunk in chunks:
-        text = text = chunk["text"].format(elephant_number=elephant_number)
+        text = chunk["text"].format(elephant_number=elephant_number)
         speed = chunk.get("speed", "normal")
         pause = chunk.get("pause", "normal")
 
-        type_text(text, speed, data.TEXT_PAUSE[pause])
+        type_text(text, speed, data.TEXT_PAUSE.get(pause, 0.3))
 
 print_lines(data.dialogue["endings"]["string"])
 
