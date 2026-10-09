@@ -33,14 +33,57 @@ def print_lines(chunks):
 
 print_lines(data.dialogue["endings"]["string"])
 
+# Checks if the number of elephants is a float or negative 
+def is_float_or_negative(number_of_elephants)
+    try:
+        number_of_elephants = float(number_of_elephants)
 
+        if not number_of_elephants.is_integer() and number_of_elephants < 0:
+            return None, "float"
 
+        return int(number_of_elephants), None
+
+    except ValueError:
+        return None, "string" 
 
 def choose_num_of_elephants(number_of_elephants):
-    input_not_int_count = 0
-    input_is_bigger_50_count = 0
     elephant_type = "Normal"
+    number_of_elephants = None
+    ending = None 
+
+    invalid_input_count = 0
+    too_high_count = 0
+    lower_hint_count = 0 
     
+    # Display introduction dialogue 
+    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["intro"])
+
+    # main input loop 
+    while ending is None:
+        number_of_elephants = input("Enter guess:") # add to dict or make it loop to the intro?
+        
+        # Check for a float or negative 
+        number_of_elephants, input_error = is_float_or_negative(player_input)
+        
+        # Three warnings for entering a float or negative 
+        if input_error is not None:
+            invalid_input_count += 1 
+
+            if invalid_input_count == 1:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["invalid_integer"]["warning_1"])
+
+            elif invalid_input_count == 2:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["invalid_integer"]["warning_2"])
+            
+            elif invalid_input_count == 3:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["invalid_integer"]["warning_3"])
+
+            else:
+
+
+
+
+
 
     # Will still accept a non numeric answer after 3 attempts 
     if not number_of_elephants.isdigit():
