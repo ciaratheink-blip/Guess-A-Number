@@ -1,6 +1,7 @@
 import time
 import data_dictionaries as data
 
+# tracks game state across levels 
 game_state = {
     "elephant_number": None,
     "elephant_type": "Normal",
@@ -161,7 +162,19 @@ def choose_num_of_elephants():
     return(number_of_elephants,ending)
 
 
-choose_num_of_elephants()    
+def show_ending(ending):
+    if ending is not None:
+        print_lines(data.dialogue["endings"][ending])
+
+
+
+number_of_elephants, ending = choose_num_of_elephants()
+
+show_ending(ending)
+
+if ending is None:
+    # Continue to the elephant diet level
+    pass   
 
     
       
