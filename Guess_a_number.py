@@ -33,7 +33,8 @@ def print_lines(chunks):
 
 print_lines(data.dialogue["endings"]["string"])
 
-# Checks if the number of elephants is a float or negative 
+# Checks if the number of elephants is a float or negative, 
+# used in choose_num_of_elephants
 def is_float_or_negative(number_of_elephants)
     try:
         number_of_elephants = float(number_of_elephants)
@@ -46,15 +47,22 @@ def is_float_or_negative(number_of_elephants)
     except ValueError:
         return None, "string" 
 
+# player chooses how many elephants they want 
+# 3 warnings for entering a float or negative
+# 3 warnings for > 50
+# assigns a number of elepahnts and an ending 
 def choose_num_of_elephants(number_of_elephants):
     elephant_type = "Normal"
-    number_of_elephants = None
+    number_of_elephants = 0
     ending = None 
 
     invalid_input_count = 0
     too_high_count = 0
     lower_hint_count = 0 
-    
+
+    awaiting_lower_response = False
+    previous_guess = None
+
     # Display introduction dialogue 
     print_lines(data_dictionaries.dialogue["levels"]["level_1"]["intro"])
 
@@ -63,10 +71,11 @@ def choose_num_of_elephants(number_of_elephants):
         number_of_elephants = input("Enter guess:") # add to dict or make it loop to the intro?
         
         # Check for a float or negative 
-        number_of_elephants, input_error = is_float_or_negative(player_input)
+        number_of_elephants, input_error = is_float_or_negative(number_of_elephants)
         
         # Three warnings for entering a float or negative 
         if input_error is not None:
+    
             invalid_input_count += 1 
 
             if invalid_input_count == 1:
@@ -79,56 +88,74 @@ def choose_num_of_elephants(number_of_elephants):
                 print_lines(data_dictionaries.dialogue["levels"]["level_1"]["invalid_integer"]["warning_3"])
 
             else:
+                ending = input_error
+                continue
+        
+        # convert to integer 
+        number_of_elephants = int(number_of_elephants)
+        
+        # check for exactly 50 
+        if number_of_elephants == 50:
+            
+            if invalid_input_count == 0 and lower_hint_count == 0 and too_high_count == 0:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["normal"])
+                
+            else:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["shiny"]) 
 
+            return (50,None)   
+        
+        # check for 0 
+        elif number_of_elephants == 0:
+            return (number_of_elephants,"zero_elephants")
 
+        # check for < 50
+        elif number_of_elephants < 50:
+            print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["normal"])
+            print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_comment"]["too_low"])
 
+            return(number_of_elephants,None)
+        
+        # check for > 50
+        else:
+            too_high_count += 1
+            # check if last response was a lower hint 
+            if awaiting_lower_response:
+                if number_of_elephants >= previous_guess:
+                    data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["ignored_lower"]
+                    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["normal"])
+                    data_dictionaries.dialogue["levels"]["level_1"]["number_comment"]["too_high"]
+                    return(number_of_elephants,None)
+                
+        # 3 warnings for > 50 
+            if too_high_count == 1:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["warning_1"])
+            
+            elif too_high_count == 2:
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["warning_1"])
+            
+            else:
+                if lower_hint_count < 3:
+                    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["lower"])
+                    lower_hint_count += 1
+                    awaiting_lower_response = True
+                else:
+                    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["normal"])
+                    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_comment"]["too_high"])
+                    return(number_of_elephants,None)
 
+        
 
-
-    # Will still accept a non numeric answer after 3 attempts 
-    if not number_of_elephants.isdigit():
-        return(number_of_elephants)
-
-    # Converts a numeric 
-    number_of_elephants = int(number_of_elephants)
-
-    # cryptic hints > 50 is too high
-    if number_of_elephants > 50:
-       input_is_bigger_50_count += 1
-       while not input_is_bigger_50_count < 5:
-        input_is_bigger_100_count += 1
-
-        if input_is_bigger_50_count is 1:
-            number_of_elephants = input(print_lines(data.dialogue["levels"]["level_1"]["too_high_warning"]["warning_1"]))
-
-        elif input_is_bigger_50_count == 2:
-            number_of_elephants = input(print_lines(data.dialogue["levels"]["level_1"]["too_high_warning"]["warning_2"]))
-
-        elif input_is_bigger_50_count > 3:
-             # fix this 
-            lower_hint_count += 1
-            print_lines(data.dialogue["levels"]["level_1"]["too_high_warning"]["lower"])
+    return(number_of_elephants,ending)
 
            
-            previous_guess = number_of_elephants
-            lower_hint_elephants = int(input())
-            if lower_hint_count > 1 and lower_hint_elephants > 
-            
-    :
+
+    
+      
 
 
 
-        elif input_is_bigger_50_count is 5:
-            return(number_of_elephants)
-     
 
 
-    elif (
-    number_of_elephants == 50
-    and enter_num_count_is_int_count == 0
-    and enter_num_count_is_bigger_100_count == 0 ):
-        elephant_type = "Shiny"
-        return number_of_elephants, elephant_type 
-        
-if not number_of_elephants.isdigit():
-        print(f"Fine, you have {number_of_elephants} elephants. Good luck with that.")
+
+   
