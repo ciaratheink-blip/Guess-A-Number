@@ -108,11 +108,120 @@ dialogue = {
                 }
             }
         },
-        "choose_elphant_diet": {},
+        
+"choose_elephant_diet": {
+
+    "intro": [
+        {
+            "text": "\nYou are transporting a herd of elephants along a river to your destination.",
+            "speed": "normal"
+        },
+        {
+            "text": "Your elephants are hungry.",
+            "speed": "normal"
+        },
+        {
+            "text": "When this is empty your elephants will starve.",
+            "speed": "normal"
+        },
+        {
+            "text": "Make sure you look after them.",
+            "speed": "extremely_slow",
+            "pause": "long"
+        }
+    ],
+
+    "choices": [
+        {
+            "text": "\nWhat do elephants eat?",
+            "speed": "normal"
+        },
+        {
+            "text": "A: Trees\nB: Mushrooms\nC: Dwarves",
+            "speed": "normal"
+        }
+    ],
+
+    "outcomes": {
+
+        "trees": [
+            {
+                "text": "\nYou find a clearing of trees.",
+                "speed": "normal"
+            },
+            {
+                "text": "Your elephants strip them bare.",
+                "speed": "normal"
+            },
+            {
+                "text": "Everything is fine.",
+                "speed": "normal"
+            },
+            {
+                "text": "Isn't nature wonderful?",
+                "speed": "normal"
+            }
+        ],
+
+        "mushrooms": [
+            {
+                "text": "\nI don't know how you thought you could find enough mushrooms to feed {elephant_number} elephants but you give it your best shot.",
+                "speed": "normal"
+            },
+            {
+                "text": "You manage to find some you think are edible.",
+                "speed": "normal"
+            },
+            {
+                "text": "It doesn't go very far.",
+                "speed": "slow",
+                "pause": "long"
+            },
+            {
+                "text": "I hope you can find more.",
+                "speed": "extremely_slow",
+                "pause": "concerning"
+            }
+        ],
+
+        "dwarves": [
+            {
+                "text": "\n There are no Dwarves here.",
+                "speed": "slow",
+                "pause": "long"
+            },
+            {
+                "text": "Your elephants are hungry.",
+                "speed": "normal"
+            },
+            {
+                "text": "Your elephants will remember your promises.",
+                "speed": "extremely_slow",
+                "pause": "concerning"
+            }
+        ]
+    }
+},
+
         "placeholder": {},
         "dwarf_encounter": {},
         "final_level": {}
     },
+
+    "multiple_choice_warnings": {
+    "warning_1": {
+        "text": "I said A, B or C.",
+        "speed": "slow"
+    },
+    "warning_2": {
+        "text": "A\nB\nOR\nC",
+        "speed": "extremely_slow"
+    },
+    "warning_3": {
+        "text": "If you don't enter A B or C, I'm ending this.",
+        "speed": "fast"
+    }
+},
 
     "endings": {
         "float": [   
@@ -124,7 +233,7 @@ dialogue = {
     {
         "speed": "normal",
         "text": (
-            "You are playing a character whose perception of reality relies on an integer.\n"
+            "\nYou are playing a character whose perception of reality relies on an integer.\n"
             'You supplied "{elephant_number}".\n'
             'Your tiny little 2-bit brain cannot parse "{elephant_number}" elephants.\n'
             "And yet they're standing right there."

@@ -19,8 +19,7 @@ def display_bar(name,percentage):
     bar = "█" * filled + " " * empty
 
     print(f"{name}: [{bar}] {percentage}%")
-
-display_bar("Hunger", game_state["hunger"])    
+   
 
 # Prints text one character at a time at a chosen speed,
 # then pauses before allowing the next line to print. 
