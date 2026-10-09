@@ -115,7 +115,11 @@ dialogue = {
     },
 
     "endings": {
-        "float": [],
+        "float": [   
+    {
+        "speed": "normal",
+        "text": "float elephant ending PLACE HOLDER",
+    }],
         "string": [
     {
         "speed": "normal",
@@ -156,7 +160,11 @@ dialogue = {
         "pause": "normal"
     }
 ],
-        "zero_elephants": []
+        "zero_elephants": [
+    {
+        "speed": "normal",
+        "text": "zero elephant ending PLACE HOLDER",
+    }]
     },
 
     "current_run_stats": {

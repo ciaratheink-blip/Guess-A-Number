@@ -35,11 +35,11 @@ print_lines(data.dialogue["endings"]["string"])
 
 # Checks if the number of elephants is a float or negative, 
 # used in choose_num_of_elephants
-def is_float_or_negative(number_of_elephants)
+def is_float_or_negative(number_of_elephants):
     try:
         number_of_elephants = float(number_of_elephants)
 
-        if not number_of_elephants.is_integer() and number_of_elephants < 0:
+        if not number_of_elephants.is_integer() or number_of_elephants < 0:
             return None, "float"
 
         return int(number_of_elephants), None
@@ -51,9 +51,8 @@ def is_float_or_negative(number_of_elephants)
 # 3 warnings for entering a float or negative
 # 3 warnings for > 50
 # assigns a number of elepahnts and an ending 
-def choose_num_of_elephants(number_of_elephants):
-    elephant_type = "Normal"
-    number_of_elephants = 0
+def choose_num_of_elephants():
+    elephant_type = 'Normal'
     ending = None 
 
     invalid_input_count = 0
@@ -68,7 +67,7 @@ def choose_num_of_elephants(number_of_elephants):
 
     # main input loop 
     while ending is None:
-        number_of_elephants = input("Enter guess:") # add to dict or make it loop to the intro?
+        number_of_elephants = input('Enter guess:') # add to dict or make it loop to the intro?
         
         # Check for a float or negative 
         number_of_elephants, input_error = is_float_or_negative(number_of_elephants)
@@ -89,7 +88,8 @@ def choose_num_of_elephants(number_of_elephants):
 
             else:
                 ending = input_error
-                continue
+                
+            continue
         
         # convert to integer 
         number_of_elephants = int(number_of_elephants)
@@ -119,33 +119,38 @@ def choose_num_of_elephants(number_of_elephants):
         # check for > 50
         else:
             too_high_count += 1
-            # check if last response was a lower hint 
+            # check if last response was a lower hint
+            # if player guesses higher after a lower hint returns their guess 
             if awaiting_lower_response:
+
                 if number_of_elephants >= previous_guess:
-                    data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["ignored_lower"]
+                    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["ignored_lower"])
                     print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["normal"])
-                    data_dictionaries.dialogue["levels"]["level_1"]["number_comment"]["too_high"]
+                    print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_comment"]["too_high"])
                     return(number_of_elephants,None)
                 
-        # 3 warnings for > 50 
+                awaiting_lower_response = False
+                
+        # 2 warnings for > 50  
             if too_high_count == 1:
                 print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["warning_1"])
             
             elif too_high_count == 2:
-                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["warning_1"])
+                print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["warning_2"])
             
+            # lower hint will show 3 times unless new guess > previous guess 
             else:
                 if lower_hint_count < 3:
                     print_lines(data_dictionaries.dialogue["levels"]["level_1"]["too_high_warning"]["lower"])
                     lower_hint_count += 1
                     awaiting_lower_response = True
+                    previous_guess = number_of_elephants
                 else:
                     print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_statement"]["normal"])
                     print_lines(data_dictionaries.dialogue["levels"]["level_1"]["number_comment"]["too_high"])
                     return(number_of_elephants,None)
 
         
-
     return(number_of_elephants,ending)
 
            
