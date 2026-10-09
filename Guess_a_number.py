@@ -5,9 +5,22 @@ import data_dictionaries as data
 game_state = {
     "elephant_number": None,
     "elephant_type": "Normal",
-    "dwarven_level": 0
+    "dwarven_level": 0,
+    "hunger": 25,
+    "bloodlust": 0
 }
 
+# displays Hunger or Bloodlust bar 
+def display_bar(name,percentage):
+    bar_length = 20
+    filled = int(percentage/100 * bar_length)
+    empty = bar_length - filled 
+
+    bar = "█" * filled + " " * empty
+
+    print(f"{name}: [{bar}] {percentage}%")
+
+display_bar("Hunger", game_state["hunger"])    
 
 # Prints text one character at a time at a chosen speed,
 # then pauses before allowing the next line to print. 
@@ -51,9 +64,11 @@ def is_float_or_negative(number_of_elephants):
     except ValueError:
         return None, "string" 
 
+# level 1 
 # player chooses how many elephants they want 
 # 3 warnings for entering a float or negative
 # 3 warnings for > 50
+# optimum answer is 50 
 # assigns a number of elepahnts and an ending 
 def choose_num_of_elephants():
     ending = None 
@@ -161,12 +176,14 @@ def choose_num_of_elephants():
         
     return(number_of_elephants,ending)
 
-
+# checks if ending has been achieved and prints it. 
 def show_ending(ending):
     if ending is not None:
         print_lines(data.dialogue["endings"][ending])
+        death_count += 1
 
 
+def what_elephants_eat():
 
 number_of_elephants, ending = choose_num_of_elephants()
 
@@ -175,6 +192,7 @@ show_ending(ending)
 if ending is None:
     # Continue to the elephant diet level
     pass   
+
 
     
       
