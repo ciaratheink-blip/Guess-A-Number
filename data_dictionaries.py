@@ -41,11 +41,11 @@ dialogue = {
             ],
             "number_statement": {
                 "normal": {
-                    "text": "You have {elephant_number} elephants.",
+                    "text": "\nYou have {elephant_number} elephants.",
                     "speed": "normal"
                 },
                 "shiny": {
-                    "text": "You have {elephant_number} {elephant_type} elephants.",
+                    "text": "\nYou have {elephant_number} {elephant_type} elephants.",
                     "speed": "normal"
                 }
             },
@@ -91,19 +91,19 @@ dialogue = {
             },
             "too_high_warning": {
                 "warning_1": {
-                    "text": "Try a more sensible number.",
+                    "text": "\nTry a more sensible number.",
                     "speed": "normal"
                 },
                 "warning_2": {
-                    "text": "Feeling ambitious, aren't we?",
+                    "text": "\nFeeling ambitious, aren't we?",
                     "speed": "normal"
                 },
                 "lower": {
-                    "text": "LOWER",
+                    "text": "\nLOWER",
                     "speed": "slow"
                 },
                 "ignored_lower": {
-                    "text": "You're not even trying, are you?",
+                    "text": "\nYou're not even trying, are you?",
                     "speed": "fast"
                 }
             }

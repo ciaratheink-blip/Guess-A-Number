@@ -7,8 +7,6 @@ game_state = {
     "dwarven_level": 0
 }
 
-number_of_elephants = 0
-elephant_state = "normal"
 
 # Prints text one character at a time at a chosen speed,
 # then pauses before allowing the next line to print. 
@@ -72,7 +70,7 @@ def choose_num_of_elephants():
     # main input loop 
     while ending is None:
         # Check for a float or negative
-        raw_input = input("Enter guess:")
+        raw_input = input("\nEnter guess:")
         game_state["elephant_number"] = raw_input
         number_of_elephants, input_error = is_float_or_negative(raw_input)
         
