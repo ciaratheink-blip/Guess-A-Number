@@ -1975,7 +1975,7 @@ dialogue = {
 
     {
 
-        "text": "You follow the edge of the ravine.",
+        "text": "\nYou follow the edge of the ravine.",
 
         "speed": "normal"
 
@@ -1991,15 +1991,17 @@ dialogue = {
 
     {
 
-        "text": "Several hours pass.",
+        "text": "\nSeveral hours pass.",
 
-        "speed": "normal"
+        "speed": "slow",
+
+        "pause" : "long" 
 
     },
 
     {
 
-        "text": "You encounter a promising-looking path.",
+        "text": "You encounter a promising looking path.",
 
         "speed": "normal"
 
@@ -2009,13 +2011,13 @@ dialogue = {
 
         "text": "It leads directly back to the bridge.",
 
-        "speed": "normal"
+        "speed": "slow"
 
     },
 
     {
 
-        "text": "You decide to try the other direction.",
+        "text": "\nYou decide to try the other direction.",
 
         "speed": "normal"
 
@@ -2025,13 +2027,15 @@ dialogue = {
 
         "text": "Several more hours pass.",
 
-        "speed": "normal"
+        "speed": "slow",
+
+        "pause": "long"
 
     },
 
     {
 
-        "text": "You reach an impassable cliff face.",
+        "text": "\nYou reach an impassable cliff face.",
 
         "speed": "normal"
 
@@ -2041,7 +2045,7 @@ dialogue = {
 
         "text": "It appears the bridge was there for a reason.",
 
-        "speed": "normal"
+        "speed": "slow"
 
     },
 
@@ -2055,9 +2059,9 @@ dialogue = {
 
     {
 
-        "text": "Your elephants cannot climb.",
+        "text": "\nYour elephants cannot climb.",
 
-        "speed": "normal"
+        "speed": "slow"
 
     },
 
@@ -2065,21 +2069,21 @@ dialogue = {
 
         "text": "You cannot climb particularly well either.",
 
-        "speed": "normal"
+        "speed": "slow"
 
     },
 
     {
 
-        "text": "You slip.",
+        "text": "\nYou slip.",
 
-        "speed": "normal"
+        "speed": "fast"
 
     },
 
     {
 
-        "text": "It's a very long way down.",
+        "text": "\nIt's a very long way down.",
 
         "speed": "slow",
 
@@ -2776,6 +2780,76 @@ dialogue = {
         "pause": "concerning"
 
     }
+],
+    
+"good_ending": [
+    {
+        "text": "\nYou continue along the path.",
+        "speed": "normal"
+    },
+    {
+        "text": "The landscape gradually opens up.",
+        "speed": "normal"
+    },
+    {
+        "text": "At last! You can see your destination.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nYou have arrived.",
+        "speed": "normal"
+    },
+    {
+        "text": "Against all reasonable expectations, you've successfully transported your herd of elephants!",
+        "speed": "normal"
+    },
+    {
+        "text": "\nThey're alive.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "\nYou're alive.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "\nMost importantly, they're not your problem anymore.",
+        "speed": "normal"
+    },
+    {
+        "text": "You hand over the elephants.",
+        "speed": "normal"
+    },
+    {
+        "text": "Your boss asks you how the journey was?",
+        "speed": "normal"
+    },
+    {
+        "text": "You make an obscene gesture at him and clock out.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nYour task is complete.",
+        "speed": "normal",
+        "pause": "long"
+    },
+    {
+        "text": "\nElephant Groundhog Day is over.",
+        "speed": "normal"
+    },
+    {
+        "text": "Congratulations.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "You have won Guess the Number.",
+        "speed": "normal"
+    }
+  
+],
+
 
 ],
 
