@@ -481,7 +481,9 @@ def bridge():
             elif game_state["dwarven_level"] == "intermediate":
 
                 game_state["dwarven_level"] = "conversational"
-                
+
+            print_lines(data.dialogue["levels"]["bridge"]["after_studying"]) 
+              
             return "elephants_wander_off"
 
 

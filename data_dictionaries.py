@@ -1758,7 +1758,25 @@ dialogue = {
     }
 
 },
-
+"after_studying": [
+    {
+        "text": "\nYou close the phrasebook, feeling rather accomplished.",
+        "speed": "normal"
+    },
+    {
+        "text": "You look up.",
+        "speed": "normal"
+    },
+    {
+        "text": "Your elephants are gone.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "Apparently, they grew tired of waiting.",
+        "speed": "normal"
+    }
+],
 },
 
     "multiple_choice_warnings": {
