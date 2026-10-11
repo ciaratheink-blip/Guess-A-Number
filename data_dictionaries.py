@@ -186,13 +186,14 @@ dialogue = {
 
         "dwarves": [
             {
-                "text": "\n There are no Dwarves here.",
+                "text": "\nThere are no Dwarves here.",
                 "speed": "slow",
                 "pause": "long"
             },
             {
                 "text": "Your elephants are hungry.",
-                "speed": "normal"
+                "speed": "slow"
+                "pause" : "long"
             },
             {
                 "text": "Your elephants will remember your promises.",
@@ -273,8 +274,15 @@ dialogue = {
     {
         "speed": "normal",
         "text": "zero elephant ending PLACE HOLDER",
+    }],
+
+        "no_letters": [
+    {
+        "speed": "normal",
+        "text": "no_letters ending PLACE HOLDER",
     }]
     },
+    
 
     "current_run_stats": {
         "heading": "CURRENT RUN STATS",
