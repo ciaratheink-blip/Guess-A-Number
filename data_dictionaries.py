@@ -849,13 +849,6 @@ dialogue = {
 
                 },
 
-                {
-
-                    "text": "You explain that you're trying to reach your destination.",
-
-                    "speed": "normal"
-
-                },
 
                 {
 
@@ -907,7 +900,7 @@ dialogue = {
 
             {
 
-                "text": "You explain that you're only trying to reach your destination.",
+                "text": "You explain that you're only trying to pass through.",
 
                 "speed": "normal"
 
@@ -923,7 +916,7 @@ dialogue = {
 
             {
 
-                "text": "Instead, they offer you supplies and directions to an alternative route.",
+                "text": "Instead, they offer you food for your elephants and directions to an alternative route.",
 
                 "speed": "normal"
 
@@ -1585,7 +1578,7 @@ dialogue = {
 
     {
 
-        "text": "You consider searching for the herd.",
+        "text": "\nYou consider searching for the herd.",
 
         "speed": "normal"
 
