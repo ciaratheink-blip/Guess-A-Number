@@ -38,10 +38,13 @@ def A_B_or_C():
 
     while True:
 
-        choice = input("\nEnter choice: ").upper()
+        choice = input("\nEnter choice: ").strip().upper()
 
         if choice in ("A", "B", "C"):
             return choice, None
+        
+        if choice == "Q":
+            quit_game()
          
         A_B_C_count += 1
 
@@ -106,7 +109,7 @@ def is_float_or_negative(number_of_elephants):
 
         return int(number_of_elephants), None
 
-    except ValueError:
+    except (ValueError, OverflowError):
         return None, "string" 
     
 # checks if ending has been achieved and prints it. 
@@ -143,6 +146,11 @@ def choose_num_of_elephants():
         # Check for a float or negative
         raw_input = input("\nEnter guess:")
         game_state["elephant_number"] = raw_input
+        
+        # quit game
+        if raw_input.strip().upper() == "Q":
+             quit_game()
+
         number_of_elephants, input_error = is_float_or_negative(raw_input)
         
         
@@ -489,6 +497,9 @@ def bridge():
 
             return "elephants_wander_off"
 
+def quit_game():
+    print("\nThanks for playing Deathlogic.")
+    raise SystemExit
 
 # Main gameplay loop.
 # Will restart after a death. 
