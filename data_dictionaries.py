@@ -2,9 +2,9 @@
 # How many seconds between characters.
 TEXT_SPEED = {
 
-    "extremely_slow": 0.1, 
+    "extremely_slow": 0.08, 
 
-    "slow": 0.08,
+    "slow": 0.06,
 
     "normal": 0.04,
 
@@ -22,7 +22,7 @@ TEXT_PAUSE = {
 
     "long": 1.5,
 
-    "concerning": 4.0
+    "concerning": 2.0
 
 }
 
