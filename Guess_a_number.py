@@ -10,7 +10,9 @@ game_state = {
     "hunger": 25,
     "bloodlust": 0,
     "ending" : None,
-    "death_count": 0
+    "death_count": 0,
+    "has_phrasebook" : False,
+    "dwarven_reputation": 0 
 }
 
 # Resets game states after run
@@ -301,8 +303,26 @@ def ending_and_reset():
 def dwarf_attack():
     if game_state["bloodlust"] < 100:
         return "attack_no_bloodlust"   
+
+    elif game_state["elephant_number"] < 50:
+        return "attack_failed"
     
-     
+    else:
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["attack"]["successful_before_status"])
+        
+        game_state["hunger"] = 100
+        game_state["dwarven_reputation"] -= 1000
+        game_state["has_phrasebook"] = True
+        game_state["bloodlust"] = 0
+
+        display_bar("Hunger", game_state["hunger"])
+        display_bar("Bloodlust", game_state["bloodlust"])
+
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["attack"]["successful_after_status"])
+    
+    return None
+
+
 def dwarf_encounter():
     print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
 

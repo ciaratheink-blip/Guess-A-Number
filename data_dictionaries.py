@@ -284,7 +284,7 @@ dialogue = {
 
         "successful_before_status": [
             {
-                "text": "\nYou order your elephants to attack.",
+                "text": "\nYour elephants attack.",
                 "speed": "normal"
             },
             {
@@ -606,7 +606,7 @@ dialogue = {
     
 "attack_no_bloodlust": [
     {
-        "text": "You urge your elephants to attack.",
+        "text": "\nYou urge your elephants to attack.",
         "speed": "normal"
     },
     {
@@ -652,7 +652,7 @@ dialogue = {
 
 "attack_failed": [
     {
-        "text": "You order your elephants to attack.",
+        "text": "\nYour elephants to attack.",
         "speed": "normal"
     },
     {
@@ -700,7 +700,7 @@ dialogue = {
 
 "diplomacy_none": [
     {
-        "text": "You don't understand a word.",
+        "text": "\nYou don't understand a word.",
         "speed": "normal"
     },
     {
@@ -735,7 +735,7 @@ dialogue = {
 
 "diplomacy_basic": [
     {
-        "text": "You consider the information available to you.",
+        "text": "\nYou consider the information available to you.",
         "speed": "normal"
     },
     {
