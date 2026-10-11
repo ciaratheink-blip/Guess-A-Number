@@ -324,18 +324,21 @@ def dwarf_attack():
     
     return None
 
-
+# L3 
+# Player chooses attack/diplomacy/Run
+# Diplomacy sucess depends on dwarven level AND no bloodlust
+# Attack success depends on bloodlust AND elephants > 50
+# Dwarven phrasebook aquired on sucessful attack. 
 def dwarf_encounter():
     print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
 
     if game_state["elephant_number"] < 50:
 
-        print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["below_50"])
 
     if game_state["elephant_diet"] == "dwarves":
 
-        print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
-
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["dwarf_diet"])
         game_state["bloodlust"] = 100
 
     display_bar("Hunger", game_state["hunger"])
@@ -346,7 +349,7 @@ def dwarf_encounter():
 
     print_lines(data.dialogue["levels"]["dwarf_encounter"]["choices"]) 
     
-    A_B_or_C()   
+    choice,ending = A_B_or_C()   
 
     if ending is not None:
 
@@ -387,7 +390,7 @@ def dwarf_encounter():
 
             print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["shared_success"])    
 
-            if game_state["blood_lust"] == 100:
+            if game_state["bloodlust"] == 100:
                 print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["bloodlust_override"])
 
                 ending = dwarf_attack()
@@ -398,9 +401,9 @@ def dwarf_encounter():
                 route = "attack" 
                 
             else:    
-                    game_state["hunger"] = 100
-                    display_bar("Hunger", game_state["hunger"])
-                    route = "diplomacy"
+                game_state["hunger"] = 100
+                display_bar("Hunger", game_state["hunger"])
+                route = "diplomacy"
 
     elif choice == "C":
         return "dwarf_run" 
@@ -411,7 +414,7 @@ def dwarf_encounter():
     elif route == "diplomacy":
         print_lines( data.dialogue["levels"]["dwarf_encounter"]["next_level"]["diplomacy"])
 
-    return ending
+    return None 
 
 
 
