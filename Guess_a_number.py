@@ -97,6 +97,9 @@ def show_ending():
         if game_state["ending"] is not None:
             print_lines(data.dialogue["endings"][game_state["ending"]])
             game_state["death_count"] += 1
+            return True
+        
+        return False
 
 # Level 1 
 # Player chooses how many elephants they want. 
@@ -252,6 +255,18 @@ def what_elephants_eat():
 
     return None     
 
+def main():
+
+    #level 1
+    num_of_elephants, ending = choose_num_of_elephants()
+
+    game_state["ending"] = ending
+
+    if game_state["ending"] is not None:
+        show_ending()
+        return
+
+    #level 2
 
 
 
