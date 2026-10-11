@@ -6,7 +6,7 @@ game_state = {
     "elephant_number": None,
     "elephant_type": "Normal",
     "elephant_diet": None,
-    "dwarven_level": 0,
+    "dwarven_level": None,
     "hunger": 25,
     "bloodlust": 0,
     "ending" : None,
@@ -300,6 +300,8 @@ def ending_and_reset():
         return True
     return False
 
+# determines outcome of dwarf attack routes 
+# Used in dwarf_encounter()
 def dwarf_attack():
     if game_state["bloodlust"] < 100:
         return "attack_no_bloodlust"   
@@ -354,6 +356,74 @@ def dwarf_encounter():
     if choice == "A":
 
         ending = dwarf_attack()
+
+        if ending is not None:
+            return ending
+        route = "attack"
+
+    elif choice == "B":
+
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["warning_intro"]) 
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["dwarven_warning"][game_state["dwarven_level"]])
+
+        if game_state["dwarven_level"] == "none":
+            return "diplomacy_none"
+
+        elif game_state["dwarven_level"] == "basic":
+            return "diplomacy_basic" 
+        
+        elif game_state["dwarven_level"] == "intermediate":
+            return "diplomacy_intermediate"
+        
+        elif game_state["dwarven_level"] == "conversational":
+
+            if game_state["elephant_type"] == "shiny":
+                print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["conversational"]["shiny"])
+
+                game_state["dwarven_reputation"] += 100
+
+            else:
+                print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["conversational"]["normal"])
+
+            print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["shared_success"])    
+
+            if game_state["blood_lust"] == 100:
+                print_lines(data.dialogue["levels"]["dwarf_encounter"]["diplomacy"]["bloodlust_override"])
+
+                ending = dwarf_attack()
+
+                if ending is not None:
+                    return ending
+                
+                route = "attack" 
+                
+            else:    
+                    game_state["hunger"] = 100
+                    display_bar("Hunger", game_state["hunger"])
+                    route = "diplomacy"
+
+    elif choice == "C":
+        return "dwarf_run" 
+
+    if route == "attack":
+        print_lines( data.dialogue["levels"]["dwarf_encounter"]["next_level"]["attack"])
+
+    elif route == "diplomacy":
+        print_lines( data.dialogue["levels"]["dwarf_encounter"]["next_level"]["diplomacy"])
+
+    return ending
+
+
+
+           
+
+
+
+
+
+
+
+            
 
 
 
