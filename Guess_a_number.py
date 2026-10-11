@@ -432,6 +432,7 @@ def bridge():
     if ending is not None:
         return ending
     
+    # Attack route 
     if choice == "A":
 
         # If you have phrasebook and try to cross
@@ -450,7 +451,42 @@ def bridge():
         else:
             print_lines(data.dialogue["levels"]["bridge"]["survivor"]["after_insult"]) 
 
-    el
+    # Find another route 
+    elif choice == "B":
+        return "no_route"
+    
+    # REST or READ 
+    elif choice == "C":
+
+        # Rest ending 
+        if game_state["has_phrasebook"] == False:
+            print_lines(data.dialogue["levels"]["bridge"]["rest"])
+            return "elephants_wander_off"
+        
+        # Read phrasebook
+        else:
+            print_lines(data.dialogue["levels"]["bridge"]["phrasebook"][game_state["dwarven_level"]])
+
+            # Upgrade dwarven proficiency 
+            if game_state["dwarven_level"] == "none":
+
+                game_state["dwarven_level"] = "basic"
+
+            elif game_state["dwarven_level"] == "basic":
+
+                game_state["dwarven_level"] = "intermediate"
+
+            elif game_state["dwarven_level"] == "intermediate":
+
+                game_state["dwarven_level"] = "conversational"
+                
+            return "elephants_wander_off"
+
+
+
+
+
+
 
 
 
