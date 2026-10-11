@@ -5,9 +5,11 @@ import data_dictionaries as data
 game_state = {
     "elephant_number": None,
     "elephant_type": "Normal",
+    "elephant_diet": None,
     "dwarven_level": 0,
     "hunger": 25,
-    "bloodlust": 0
+    "bloodlust": 0,
+    "ending" : None
 }
 
 # displays Hunger or Bloodlust bar 
@@ -22,25 +24,31 @@ def display_bar(name,percentage):
    
 # Choice validation. 
 # checks if input is A B or C
-# player gets 3 warinings or the game restarts
+# Player gets 3 warinings or the game restarts.
 #stretch goal - make them play guess the letter ?
 # failure counts as a death 
-def A_B_or_C(choice):
-    A_B_C_count = 0
-    while A_B_C_count < 3 and choice not in ("A", "B", "C"):
+def A_B_or_C():
+    while True:
+
+        choice = input("Enter choice: ").upper()
+
+        if choice in ("A", "B", "C"):
+            return choice, None
+         
         A_B_C_count += 1
-        choice = input("enter choice:")
+
         if A_B_C_count == 1:
           print_lines(data.dialogue["multiple_choice_warnings"]["warning_1"])
+
         elif A_B_C_count == 2:
             print_lines(data.dialogue["multiple_choice_warnings"]["warning_2"]) 
+
         elif A_B_C_count == 3:
             print_lines(data.dialogue["multiple_choice_warnings"]["warning_3"])
+
         else:
-            A_B_C_count = 0
-            ending = "no_letters"
-            return ending
-    return choice
+           return None, "no_letters" #!!!need to write and add to dict
+   
 
 # Prints text one character at a time at a chosen speed,
 # then pauses before allowing the next line to print. 
@@ -56,7 +64,7 @@ def type_text(text, speed="normal", pause=0.3):
 
 # Retrieves dialogue text and its speed/pause settings.
 # Formats dynamic values and sends each line to type_text().
-# Use print_lines(dialogue_chunks) instead of print() for narration.
+# Use print_lines(dialogue_chunks) instead of print() for narration. - !!!I should make a word doc for dialogue paths 
 def print_lines(chunks):
      # Wrap single dialogue entries in a list.
     if isinstance(chunks, dict):
@@ -70,8 +78,8 @@ def print_lines(chunks):
         type_text(text, speed, data.TEXT_PAUSE.get(pause, 0.3))
 
 
-# Checks if the number of elephants is a float or negative, 
-# used in choose_num_of_elephants
+# Checks if the number of elephants is a float or negative. 
+# Used in choose_num_of_elephants.
 def is_float_or_negative(number_of_elephants):
     try:
         number_of_elephants = float(number_of_elephants)
@@ -83,13 +91,19 @@ def is_float_or_negative(number_of_elephants):
 
     except ValueError:
         return None, "string" 
+    
+# checks if ending has been achieved and prints it. 
+def show_ending():
+        if game_state["ending"] is not None:
+            print_lines(data.dialogue["endings"][game_state["ending"]])
+            game_state["death_count"] += 1
 
-# level 1 
-# player chooses how many elephants they want 
-# 3 warnings for entering a float or negative
+# Level 1 
+# Player chooses how many elephants they want. 
+# 3 warnings for entering a float or negative.
 # 3 warnings for > 50
 # optimum answer is 50 
-# assigns a number of elepahnts and an ending 
+# Assigns a number of elepahnts and an ending. 
 def choose_num_of_elephants():
     ending = None 
 
@@ -196,22 +210,52 @@ def choose_num_of_elephants():
         
     return(number_of_elephants,ending)
 
-# checks if ending has been achieved and prints it. 
-def show_ending(ending):
-    if ending is not None:
-        print_lines(data.dialogue["endings"][ending])
-        death_count += 1
 
-
+# Level 2 
+# Player chooses elephant diet.
+# Hunger and bloodlust stats updtated.
 def what_elephants_eat():
+    print_lines(data.dialogue["levels"]["choose_elephant_diet"]["intro"])
+    print_lines(data.dialogue["levels"]["choose_elephant_diet"]["choices"])
+    display_bar("Hunger", game_state["hunger"])
 
-number_of_elephants, ending = choose_num_of_elephants()
+    choice, ending = A_B_or_C()
 
-show_ending(ending)
+    if ending is not None:
+        return ending 
+    
+    if choice == "A":
+        game_state["elephant_diet"] = "trees"
+        game_state["hunger"] = 50
+        game_state["bloodlust"] = 0
 
-if ending is None:
-    # Continue to the elephant diet level
-    pass   
+        print_lines(data.dialogue["levels"]["choose_elephant_diet"]["outcomes"]["trees"])
+        
+
+    elif choice == "B":
+        game_state["elephant_diet"] = "mushrooms"
+        game_state["hunger"] = 30
+        game_state["bloodlust"] = 0
+
+        print_lines(data.dialogue["levels"]["choose_elephant_diet"]["outcomes"]["mushrooms"])
+
+    elif choice == "C":
+        game_state["elephant_diet"] = "dwarves"
+        game_state["hunger"] = 10
+        game_state["bloodlust"] = 50
+
+        print_lines(data.dialogue["levels"]["choose_elephant_diet"]["outcomes"]["dwarves"])
+
+    display_bar("Hunger", game_state["hunger"])
+    if game_state["bloodlust"] > 0:
+         display_bar("Bloodlust", game_state["bloodlust"])
+
+    return None     
+
+
+
+
+ 
 
 
     
