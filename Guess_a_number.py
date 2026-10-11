@@ -12,6 +12,16 @@ game_state = {
     "ending" : None
 }
 
+# Resets game states after run
+# Dwarven level and totals deaths persist 
+def reset_game():
+        game_state["elephant_number"] = None
+        game_state["elephant_type"] = "Normal"
+        game_state["elephant_diet"] = None
+        game_state["hunger"] = 25
+        game_state["bloodlust"] = 0
+        game_state["ending"] = None
+
 # displays Hunger or Bloodlust bar 
 def display_bar(name,percentage):
     bar_length = 20
@@ -28,6 +38,8 @@ def display_bar(name,percentage):
 #stretch goal - make them play guess the letter ?
 # failure counts as a death 
 def A_B_or_C():
+    A_B_C_count = 0
+
     while True:
 
         choice = input("Enter choice: ").upper()
@@ -97,6 +109,7 @@ def show_ending():
         if game_state["ending"] is not None:
             print_lines(data.dialogue["endings"][game_state["ending"]])
             game_state["death_count"] += 1
+            print_lines(data.dialogue["death_reboot"])
             return True
         
         return False
@@ -250,6 +263,7 @@ def what_elephants_eat():
         print_lines(data.dialogue["levels"]["choose_elephant_diet"]["outcomes"]["dwarves"])
 
     display_bar("Hunger", game_state["hunger"])
+
     if game_state["bloodlust"] > 0:
          display_bar("Bloodlust", game_state["bloodlust"])
 
@@ -257,16 +271,37 @@ def what_elephants_eat():
 
 def main():
 
-    #level 1
-    num_of_elephants, ending = choose_num_of_elephants()
+    while True:
 
-    game_state["ending"] = ending
+        #LEVEL 1 : How many Elephants?
+        number_of_elephants, ending = choose_num_of_elephants()
+        game_state["ending"] = ending
 
-    if game_state["ending"] is not None:
-        show_ending()
-        return
+        if show_ending():
+            reset_game()
+            continue
 
-    #level 2
+        # LEVEL 2 : What do they eat?
+        game_state["ending"] = what_elephants_eat()
+
+        if show_ending():
+            reset_game()
+            continue
+
+        #LEVEL 3 : Dwarves 
+        # TBA
+
+        # temp exit until more levels exist
+        break
+
+
+
+
+
+    
+
+
+
 
 
 
