@@ -6,7 +6,7 @@ game_state = {
     "elephant_number": None,
     "elephant_type": "Normal",
     "elephant_diet": None,
-    "dwarven_level": None,
+    "dwarven_level": "none",
     "hunger": 25,
     "bloodlust": 0,
     "ending" : None,
@@ -417,8 +417,43 @@ def dwarf_encounter():
 
     return None 
 
+# Final level
 def bridge():
-    pass 
+    print_lines(data.dialogue["levels"]["bridge"]["intro"])
+
+    if game_state["has_phrasebook"] == True:
+        print_lines(data.dialogue["levels"]["bridge"]["choices"]["phrasebook"])
+
+    else:
+        print_lines(data.dialogue["levels"]["bridge"]["choices"]["normal"])
+    
+    choice, ending = A_B_or_C
+
+    if ending is not None:
+        return ending
+    
+    if choice == "A":
+
+        # If you have phrasebook and try to cross
+        # dwarf survivour insults you and cuts bridge 
+        if game_state["has_phrasebook"] == True:
+            # translate according to dwarven level
+            print_lines(data.dialogue["levels"]["bridge"]["survivor"]["insult"][game_state["dwarven_level"]]) 
+            print_lines(data.dialogue["levels"]["bridge"]["survivor"]["after_insult"]) 
+            return "bridge_sabotage"
+        
+        # Elephants > 50, bridge collapses
+        elif game_state["elephant_number"] > 50:
+            return "bridge_collapse"
+        
+        # No phrasebook and elephants < 50. Sucessful crossing! 
+        else:
+            print_lines(data.dialogue["levels"]["bridge"]["survivor"]["after_insult"]) 
+
+    el
+
+
+
 
 # Main gameplay loop.
 # Will restart after a death. 
