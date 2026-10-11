@@ -429,7 +429,7 @@ def bridge():
     else:
         print_lines(data.dialogue["levels"]["bridge"]["choices"]["normal"])
     
-    choice, ending = A_B_or_C
+    choice, ending = A_B_or_C()
 
     if ending is not None:
         return ending
