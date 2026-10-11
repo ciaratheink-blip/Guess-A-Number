@@ -417,9 +417,8 @@ def dwarf_encounter():
 
     return None 
 
-
-
-
+def bridge():
+    pass 
 
 # Main gameplay loop.
 # Will restart after a death. 
@@ -449,7 +448,8 @@ def main():
 
         if ending_and_reset():
             continue
-        # TBA
+        
+        #LEVEL 4 : Bridge
 
         # temp exit until more levels exist
         break

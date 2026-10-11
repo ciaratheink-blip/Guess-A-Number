@@ -33,7 +33,7 @@ dialogue = {
     "levels": {
         "level_1": {
             "intro": [
-                {"text": "Guess the number?", "speed": "normal"},
+                {"text": "\nGuess the number?", "speed": "normal"},
                 {
                     "text": "Enter whole positive numerals only or face the consequences.",
                     "speed": "slow"
@@ -273,7 +273,7 @@ dialogue = {
             "speed": "normal"
         },
         {
-            "text": "A: Attack!\nB: Diplomacy!\nC: Run!",
+            "text": "\nA: Attack!\nB: Diplomacy!\nC: Run!",
             "speed": "normal"
         }
     ],
@@ -318,7 +318,7 @@ dialogue = {
                 "pause": "long"
             },
             {
-                "text": "You survey the aftermath.",
+                "text": "\nYou survey the aftermath.",
                 "speed": "normal"
             },
             {
@@ -329,7 +329,7 @@ dialogue = {
 
         "successful_after_status": [
             {
-                "text": "\nYou find a Dwarven to English phrasebook among the abandoned supplies.",
+                "text": "\nYou find a Dwarven-to-English phrasebook among the abandoned supplies.",
                 "speed": "normal"
             },
             {
@@ -606,7 +606,7 @@ dialogue = {
     
 "attack_no_bloodlust": [
     {
-        "text": "\nYou urge your elephants to attack.",
+        "text": "\nYou urge your elephants attack.",
         "speed": "normal"
     },
     {
@@ -664,7 +664,7 @@ dialogue = {
         "speed": "normal"
     },
     {
-        "text": "Your elephants are enthusiastic.",
+        "text": "Your elephants are very enthusiastic.",
         "speed": "normal"
     },
     {
@@ -680,7 +680,7 @@ dialogue = {
         "speed": "normal"
     },
     {
-        "text": "Unfortunately, you're standing between two armies, neither of which is particularly concerned about your survival.",
+        "text": "Unfortunately you are standing between two armies.",
         "speed": "normal"
     },
     {
