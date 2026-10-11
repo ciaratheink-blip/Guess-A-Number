@@ -341,6 +341,7 @@ def dwarf_encounter():
         print_lines(data.dialogue["levels"]["dwarf_encounter"]["dwarf_diet"])
         game_state["bloodlust"] = 100
 
+    game_state["hunger"] -= 5 
     display_bar("Hunger", game_state["hunger"])
 
     if game_state["bloodlust"] > 0 :
@@ -418,23 +419,6 @@ def dwarf_encounter():
 
 
 
-           
-
-
-
-
-
-
-
-            
-
-
-
-        
-           
-
-
-
 
 
 # Main gameplay loop.
@@ -458,10 +442,13 @@ def main():
             continue
 
         # Travel 
-        travel_to_dwarves():
+        travel_to_dwarves()
 
         #LEVEL 3 : Dwarves 
         game_state["ending"] = dwarf_encounter()
+
+        if ending_and_reset():
+            continue
         # TBA
 
         # temp exit until more levels exist

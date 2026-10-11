@@ -212,7 +212,7 @@ dialogue = {
             "speed": "normal"
         },
         {
-            "text": "Your elephants start to get hungry.",
+            "text": "Your elephants start to get hungry again.",
             "speed": "slow"
         }
     ],
