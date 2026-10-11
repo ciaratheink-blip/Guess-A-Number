@@ -20,6 +20,27 @@ def display_bar(name,percentage):
 
     print(f"{name}: [{bar}] {percentage}%")
    
+# Choice validation. 
+# checks if input is A B or C
+# player gets 3 warinings or the game restarts
+#stretch goal - make them play guess the letter ?
+# failure counts as a death 
+def A_B_or_C(choice):
+    A_B_C_count = 0
+    while A_B_C_count < 3 and choice not in ("A", "B", "C"):
+        A_B_C_count += 1
+        choice = input("enter choice:")
+        if A_B_C_count == 1:
+          print_lines(data.dialogue["multiple_choice_warnings"]["warning_1"])
+        elif A_B_C_count == 2:
+            print_lines(data.dialogue["multiple_choice_warnings"]["warning_2"]) 
+        elif A_B_C_count == 3:
+            print_lines(data.dialogue["multiple_choice_warnings"]["warning_3"])
+        else:
+            A_B_C_count = 0
+            ending = "no_letters"
+            return ending
+    return choice
 
 # Prints text one character at a time at a chosen speed,
 # then pauses before allowing the next line to print. 

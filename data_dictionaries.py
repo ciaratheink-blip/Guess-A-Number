@@ -203,8 +203,8 @@ dialogue = {
     }
 },
 
-        "placeholder": {},
         "dwarf_encounter": {},
+        "bridge": {},
         "final_level": {}
     },
 
