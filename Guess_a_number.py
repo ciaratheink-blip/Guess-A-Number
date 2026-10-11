@@ -440,7 +440,9 @@ def bridge():
         # If you have phrasebook and try to cross
         # dwarf survivour insults you and cuts bridge 
         if game_state["has_phrasebook"] == True:
-            # translate according to dwarven level
+            print_lines(data.dialogue["levels"]["bridge"]["survivor"]["intro"])
+            
+            # translates according to dwarven level
             print_lines(data.dialogue["levels"]["bridge"]["survivor"]["insult"][game_state["dwarven_level"]]) 
             print_lines(data.dialogue["levels"]["bridge"]["survivor"]["after_insult"]) 
             return "bridge_sabotage"
