@@ -51,6 +51,21 @@ dialogue = {
         "speed": "fast"
 
     },
+    "final_stats": {
+    "text": (
+        "\n+--------------------------------+\n"
+        "|        FINAL STATISTICS        |\n"
+        "+--------------------------------+\n"
+        "  Elephants delivered: {game_state["elephant_number"]}\n"
+        "  Elephant type: {game_state["elephant_type"]}\n"
+        "  Elephant diet: {game_state["elephant_diet"]}\n"
+        "  Dwarven proficiency: {game_state["dwarven_level"]}\n"
+        "  Dwarven reputation: {game_state["dwarven_reputation"]}\n"
+        "  Total deaths: {game_state["death_count"]}\n"
+        "+--------------------------------+"
+    ),
+    "speed": "fast"
+},
 
 
 

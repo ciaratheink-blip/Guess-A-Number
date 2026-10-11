@@ -24,6 +24,8 @@ def reset_game():
         game_state["hunger"] = 25
         game_state["bloodlust"] = 0
         game_state["ending"] = None
+        game_state["has_phrasebook"] = False
+        game_state["dwarven_reputation"]= 0 
 
    
 # Choice validation. 
@@ -483,14 +485,6 @@ def bridge():
             return "elephants_wander_off"
 
 
-
-
-
-
-
-
-
-
 # Main gameplay loop.
 # Will restart after a death. 
 def main():
@@ -521,9 +515,17 @@ def main():
             continue
         
         #LEVEL 4 : Bridge
+        game_state["ending"] = bridge()
 
-        # temp exit until more levels exist
-        break
+        if game_state["ending"] == "good_ending":
+
+            print_lines(data.dialogue["levels"]["bridge"]["good_ending"])
+            print_lines(data.dialogue["final_stats"])
+
+            break
+
+        if ending_and_reset():
+            continue
 
 
 main()
