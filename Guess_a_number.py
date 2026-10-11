@@ -275,6 +275,36 @@ def what_elephants_eat():
 
     return None     
 
+#Travel to Level 3.
+#Decreases elephant hunger by 5 
+#Sets bloodlust to 75
+#Prints changes 
+def travel_to_dwarves():
+    print_lines(data.dialogue["levels"]["travel_to_dwarves"]["before_status"])
+
+    game_state["hunger"] -= 5
+    display_bar("Hunger", game_state["hunger"])
+
+    if game_state["elephant_diet"] == "dwarves":
+        game_state["bloodlust"] = 75
+        display_bar("Bloodlust", game_state["bloodlust"])
+
+    print_lines(data.dialogue["levels"]["travel_to_dwarves"]["after_status"])
+    return None
+
+def ending_and_reset():
+    if show_ending():
+        reset_game()
+        return True
+    return False
+    
+def dwarf_encounter():
+    continue
+
+
+
+# Main gameplay loop.
+# Will restart after a death. 
 def main():
 
     while True:
@@ -283,18 +313,21 @@ def main():
         number_of_elephants, ending = choose_num_of_elephants()
         game_state["ending"] = ending
 
-        if show_ending():
-            reset_game()
+        if ending_and_reset():
             continue
+        
 
         # LEVEL 2 : What do they eat?
         game_state["ending"] = what_elephants_eat()
 
-        if show_ending():
-            reset_game()
+        if ending_and_reset():
             continue
 
+        # Travel 
+        travel_to_dwarves():
+
         #LEVEL 3 : Dwarves 
+        game_state["ending"] = dwarf_encounter()
         # TBA
 
         # temp exit until more levels exist

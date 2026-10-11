@@ -881,13 +881,7 @@ dialogue = {
     }
 ],
 
-    },
+    }
     
 
-    "current_run_stats": {
-        "heading": "CURRENT RUN STATS",
-        "deaths_total": "Total deaths",
-        "dwarven_level": "Dwarven level",
-        "elephant_number": "Elephants remaining"
-    }
-}
+
