@@ -208,7 +208,7 @@ dialogue = {
 
     "before_status": [
         {
-            "text": "You continue along the river for some distance.",
+            "text": "\nYou continue along the river for some distance.",
             "speed": "normal"
         },
         {
@@ -219,7 +219,7 @@ dialogue = {
 
     "after_status": [
         {
-            "text": "I hope you can keep them fed.",
+            "text": "\nI hope you can keep them fed.",
             "speed": "slow",
             "pause": "concerning"
         }
@@ -269,7 +269,7 @@ dialogue = {
 
     "choices": [
         {
-            "text": "What would you like to do?",
+            "text": "\nWhat would you like to do?",
             "speed": "normal"
         },
         {
@@ -313,8 +313,8 @@ dialogue = {
                 "speed": "normal"
             },
             {
-                "text": "The meal takes considerably longer.",
-                "speed": "slow",
+                "text": "\nThe meal takes considerably longer.",
+                "speed": "extremely_slow",
                 "pause": "long"
             },
             {
@@ -520,7 +520,7 @@ dialogue = {
 
         "attack": [
             {
-                "text": "With nobody left to object, you proceed through the valley.",
+                "text": "\nWith nobody left to object, you proceed through the valley.",
                 "speed": "normal"
             }
         ]
@@ -882,6 +882,6 @@ dialogue = {
 ],
 
     }
-    
+}    
 
 
