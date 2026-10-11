@@ -1063,8 +1063,6 @@ dialogue = {
 
 
 
-
-
     "intro": [
 
         {
@@ -1267,7 +1265,7 @@ dialogue = {
 
             {
 
-                "text": "You start with the basics.",
+                "text": "You start with the basics:",
 
                 "speed": "normal"
 
@@ -1275,7 +1273,7 @@ dialogue = {
 
             {
 
-                "text": "Hello.",
+                "text": "\nHello.",
 
                 "speed": "slow"
 
@@ -1283,7 +1281,7 @@ dialogue = {
 
             {
 
-                "text": "Goodbye.",
+                "text": "\nGoodbye.",
 
                 "speed": "slow"
 
@@ -1291,7 +1289,7 @@ dialogue = {
 
             {
 
-                "text": "Elephant.",
+                "text": "\nElephant.",
 
                 "speed": "slow"
 
@@ -1299,7 +1297,7 @@ dialogue = {
 
             {
 
-                "text": "You notice that 'elephant' has an unusually long entry.",
+                "text": "\nYou notice that 'elephant' has an unusually long entry.",
 
                 "speed": "normal"
 
@@ -1333,7 +1331,7 @@ dialogue = {
 
             {
 
-                "text": "You move on to more complicated phrases.",
+                "text": "You move on to more complicated phrases:",
 
                 "speed": "normal"
 
@@ -1341,7 +1339,7 @@ dialogue = {
 
             {
 
-                "text": "Please do not approach my elephants.",
+                "text": "\nPlease do not approach my elephants.",
 
                 "speed": "slow"
 
@@ -1349,7 +1347,7 @@ dialogue = {
 
             {
 
-                "text": "These elephants are not dangerous.",
+                "text": "\nThese elephants are not dangerous.",
 
                 "speed": "slow"
 
@@ -1357,7 +1355,7 @@ dialogue = {
 
             {
 
-                "text": "Please stop shouting.",
+                "text": "\nPlease stop shouting.",
 
                 "speed": "slow"
 
@@ -1365,7 +1363,7 @@ dialogue = {
 
             {
 
-                "text": "You feel your understanding of Dwarven improving.",
+                "text": "\nYou feel your understanding of Dwarven improving.",
 
                 "speed": "normal"
 
@@ -1391,7 +1389,7 @@ dialogue = {
 
             {
 
-                "text": "You begin studying more advanced vocabulary.",
+                "text": "You begin studying more advanced vocabulary:",
 
                 "speed": "normal"
 
@@ -1399,7 +1397,7 @@ dialogue = {
 
             {
 
-                "text": "This is a protected breeding ground.",
+                "text": "\nThis is a protected breeding ground.",
 
                 "speed": "slow"
 
@@ -1407,7 +1405,7 @@ dialogue = {
 
             {
 
-                "text": "We must preserve the local ecosystem.",
+                "text": "\nWe must preserve the local ecosystem.",
 
                 "speed": "slow"
 
@@ -1415,7 +1413,7 @@ dialogue = {
 
             {
 
-                "text": "I am terribly sorry about your family.",
+                "text": "\nI am terribly sorry about your family.",
 
                 "speed": "slow",
 
@@ -1425,7 +1423,7 @@ dialogue = {
 
             {
 
-                "text": "You wonder why that last phrase has been underlined.",
+                "text": "\nYou wonder why that last phrase has been underlined.",
 
                 "speed": "normal"
 
@@ -1651,7 +1649,7 @@ dialogue = {
 
             {
 
-                "text": "He begins shouting.",
+                "text": "He begins shouting:",
 
                 "speed": "normal"
 
@@ -1755,7 +1753,7 @@ dialogue = {
 
         ]
 
-    }
+    
 
 },
 "after_studying": [
