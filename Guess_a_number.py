@@ -9,7 +9,8 @@ game_state = {
     "dwarven_level": 0,
     "hunger": 25,
     "bloodlust": 0,
-    "ending" : None
+    "ending" : None,
+    "death_count": 0
 }
 
 # Resets game states after run
@@ -22,15 +23,6 @@ def reset_game():
         game_state["bloodlust"] = 0
         game_state["ending"] = None
 
-# displays Hunger or Bloodlust bar 
-def display_bar(name,percentage):
-    bar_length = 20
-    filled = int(percentage/100 * bar_length)
-    empty = bar_length - filled 
-
-    bar = "█" * filled + " " * empty
-
-    print(f"{name}: [{bar}] {percentage}%")
    
 # Choice validation. 
 # checks if input is A B or C
@@ -42,7 +34,7 @@ def A_B_or_C():
 
     while True:
 
-        choice = input("Enter choice: ").upper()
+        choice = input("\nEnter choice: ").upper()
 
         if choice in ("A", "B", "C"):
             return choice, None
@@ -59,7 +51,7 @@ def A_B_or_C():
             print_lines(data.dialogue["multiple_choice_warnings"]["warning_3"])
 
         else:
-           return None, "no_letters" #!!!need to write and add to dict
+           return None, "no_letters" 
    
 
 # Prints text one character at a time at a chosen speed,
@@ -89,6 +81,15 @@ def print_lines(chunks):
 
         type_text(text, speed, data.TEXT_PAUSE.get(pause, 0.3))
 
+# displays Hunger or Bloodlust bar 
+def display_bar(name,percentage):
+    bar_length = 20
+    filled = int(percentage/100 * bar_length)
+    empty = bar_length - filled 
+
+    bar = "█" * filled + " " * empty
+
+    print(f"\n{name}: [{bar}] {percentage}%")
 
 # Checks if the number of elephants is a float or negative. 
 # Used in choose_num_of_elephants.
@@ -158,6 +159,9 @@ def choose_num_of_elephants():
 
             else:
                 ending = input_error
+
+                print_lines(data.dialogue["levels"]["level_1"]["number_statement"]["normal"]) 
+                print_lines(data.dialogue["levels"]["level_1"]["number_comment"]["invalid"])
                 
             continue
 
@@ -180,6 +184,8 @@ def choose_num_of_elephants():
         
         # check for 0 
         elif number_of_elephants == 0:
+            print_lines(data.dialogue["levels"]["level_1"]["number_statement"]["normal"]) 
+            print_lines(data.dialogue["levels"]["level_1"]["number_comment"]["invalid"])
             return (number_of_elephants,"zero_elephants")
 
         # check for < 50
@@ -232,9 +238,9 @@ def choose_num_of_elephants():
 # Hunger and bloodlust stats updtated.
 def what_elephants_eat():
     print_lines(data.dialogue["levels"]["choose_elephant_diet"]["intro"])
-    print_lines(data.dialogue["levels"]["choose_elephant_diet"]["choices"])
     display_bar("Hunger", game_state["hunger"])
-
+    print_lines(data.dialogue["levels"]["choose_elephant_diet"]["choices"])
+   
     choice, ending = A_B_or_C()
 
     if ending is not None:
@@ -294,7 +300,7 @@ def main():
         # temp exit until more levels exist
         break
 
-
+main()
 
 
 

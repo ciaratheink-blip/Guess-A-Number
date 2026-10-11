@@ -1,7 +1,7 @@
 # Dialog character speed dictionry 
 # How many seconds between characters.
 TEXT_SPEED = {
-    "extremely_slow": 0.2, 
+    "extremely_slow": 0.1, 
     "slow": 0.08,
     "normal": 0.04,
     "fast": 0.01
@@ -122,12 +122,12 @@ dialogue = {
         },
         {
             "text": "When this is empty your elephants will starve.",
-            "speed": "normal"
+            "speed": "slow"
         },
         {
             "text": "Make sure you look after them.",
             "speed": "extremely_slow",
-            "pause": "long"
+        
         }
     ],
 
@@ -180,7 +180,7 @@ dialogue = {
             {
                 "text": "I hope you can find more.",
                 "speed": "extremely_slow",
-                "pause": "concerning"
+            
             }
         ],
 
@@ -192,13 +192,13 @@ dialogue = {
             },
             {
                 "text": "Your elephants are hungry.",
-                "speed": "slow"
+                "speed": "slow",
                 "pause" : "long"
             },
             {
                 "text": "Your elephants will remember your promises.",
                 "speed": "extremely_slow",
-                "pause": "concerning"
+                
             }
         ]
     }
@@ -211,15 +211,15 @@ dialogue = {
 
     "multiple_choice_warnings": {
     "warning_1": {
-        "text": "I said A, B or C.",
+        "text": "\nI said A, B or C.",
         "speed": "slow"
     },
     "warning_2": {
-        "text": "A\nB\nOR\nC",
+        "text": "\nA\nB\nOR\nC",
         "speed": "extremely_slow"
     },
     "warning_3": {
-        "text": "If you don't enter A B or C, I'm ending this.",
+        "text": "\nIf you don't enter A B or C, I'm ending this.",
         "speed": "fast"
     }
 },
@@ -234,7 +234,7 @@ dialogue = {
     {
         "speed": "normal",
         "text": (
-            "\nYou are playing a character whose perception of reality relies on an integer.\n"
+            "You are playing a character whose perception of reality relies on an integer.\n"
             'You supplied "{elephant_number}".\n'
             'Your tiny little 2-bit brain cannot parse "{elephant_number}" elephants.\n'
             "And yet they're standing right there."
