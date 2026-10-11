@@ -451,7 +451,7 @@ def bridge():
         
         # No phrasebook and elephants < 50. Sucessful crossing! 
         else:
-            print_lines(data.dialogue["levels"]["bridge"]["survivor"]["after_insult"]) 
+            print_lines(data.dialogue["levels"]["bridge"]["cross_success"]) 
 
     # Find another route 
     elif choice == "B":
@@ -483,7 +483,7 @@ def bridge():
                 game_state["dwarven_level"] = "conversational"
 
             print_lines(data.dialogue["levels"]["bridge"]["after_studying"]) 
-              
+
             return "elephants_wander_off"
 
 
