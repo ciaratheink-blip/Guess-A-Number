@@ -524,7 +524,7 @@ def main():
 
         if game_state["ending"] == "good_ending":
 
-            print_lines(data.dialogue["levels"]["bridge"]["good_ending"])
+            print_lines(data.dialogue["endings"]["good_ending"])
             print_lines(data.dialogue["final_stats"])
 
             break
