@@ -1775,6 +1775,7 @@ dialogue = {
         "speed": "normal"
     }
 ],
+        },
 },
 
     "multiple_choice_warnings": {

@@ -451,7 +451,8 @@ def bridge():
         
         # No phrasebook and elephants < 50. Sucessful crossing! 
         else:
-            print_lines(data.dialogue["levels"]["bridge"]["cross_success"]) 
+            print_lines(data.dialogue["levels"]["bridge"]["cross_success"])
+            return "good_ending" 
 
     # Find another route 
     elif choice == "B":
