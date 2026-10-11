@@ -297,9 +297,50 @@ def ending_and_reset():
         reset_game()
         return True
     return False
+
+def dwarf_attack():
+    if game_state["bloodlust"] < 100:
+        return "attack_no_bloodlust"   
     
+     
 def dwarf_encounter():
-    continue
+    print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
+
+    if game_state["elephant_number"] < 50:
+
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
+
+    if game_state["elephant_diet"] == "dwarves":
+
+        print_lines(data.dialogue["levels"]["dwarf_encounter"]["intro"])
+
+        game_state["bloodlust"] = 100
+
+    display_bar("Hunger", game_state["hunger"])
+
+    if game_state["bloodlust"] > 0 :
+
+        display_bar("Bloodlust", game_state["bloodlust"])
+
+    print_lines(data.dialogue["levels"]["dwarf_encounter"]["choices"]) 
+    
+    A_B_or_C()   
+
+    if ending is not None:
+
+        return ending
+    
+
+    if choice == "A":
+
+        ending = dwarf_attack()
+
+
+
+        
+           
+
+
 
 
 
