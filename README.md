@@ -26,7 +26,7 @@
 - **`data_dictionaries.py`** contains the dialogue, text speeds, and pause settings. It is imported by the main script.
 - **`deathlogic_stitched_flowchart.png`** is the flowchart showing the game's branches and outcomes. It had to be stitched together from screenshots. Can be viewed in full [here](https://miro.com/app/board/uXjVEdy3zI4=/?share_link_id=37161252913)
 - **`gameplay demo.mp4`** is the gameplay demo. Covers a fration of the content, theres a lot of dialogue. 
-**Repository:** [Deathlogic on GitHub](https://github.com/ciaratheink-blip/Guess-A-Number.git)
+-**Repository:** [Deathlogic on GitHub](https://github.com/ciaratheink-blip/Guess-A-Number.git)
 
 ---
 
