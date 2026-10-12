@@ -75,7 +75,7 @@ dialogue = {
 
             "intro": [
 
-                {"text": "\nGuess the number?", "speed": "normal"},
+                {"text": "\nGuess the number?\n(Enter q at any choice to quit.)", "speed": "normal"},
 
                 {
 
@@ -663,21 +663,6 @@ dialogue = {
 
             },
 
-            {
-
-                "text": "You leaf through it.",
-
-                "speed": "normal"
-
-            },
-
-            {
-
-                "text": "The Dwarven word for 'elephant' is followed by several pages of increasingly specific warnings.",
-
-                "speed": "normal"
-
-            },
 
             {
 
@@ -1806,11 +1791,45 @@ dialogue = {
         "float": [   
 
     {
-
-        "speed": "normal",
-
-        "text": "float elephant ending PLACE HOLDER",
-
+        "text": "\nYou have {elephant_number} elephants.",
+        "speed": "extremely_slow"
+    },
+    {
+        "text": "\nYou look at your elephants.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "You're hit with an overwhelming sense of wrongness.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "You do what needs to be done.",
+        "speed": "extremely_slow",
+        "pause": "concerning"
+    },
+    {
+        "text": "\nYou never speak of it again.",
+        "speed": "normal"
+    },
+    {
+        "text": "Until one night many years later \nwhen you get drunk and tell the whole story.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nNobody believes you.",
+        "speed": "slow",
+        "pause": "concerning"
+    },
+    {
+        "text": "From that day forward, you're known as the Impossible Elephants Guy.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nYou die at the age of 80.",
+        "speed": "slow",
+        "pause": "long"
     }],
 
 
@@ -2210,12 +2229,34 @@ dialogue = {
         "zero_elephants": [
 
     {
-
-        "speed": "normal",
-
-        "text": "zero elephant ending PLACE HOLDER",
-
-    }],
+        "text": "\nOkay. I was going to send you on an epic quest with elephants.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nBut you have none.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "You suffer an identity crisis.",
+        "speed": "slow"
+      
+    },
+    {
+        "text": "How can you be an elephant herder without elephants?",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "You take an apprenticeship in bricklaying.",
+        "speed": "normal"
+    },
+    {
+        "text": "You die at 83 with back problems.",
+        "speed": "slow",
+        "pause": "long"
+    }
+    ],
 
 
 
@@ -2571,7 +2612,7 @@ dialogue = {
 
     {
 
-        "text": "You consider the information available to you.",
+        "text": "\nYou consider the information available to you.",
 
         "speed": "normal"
 
@@ -2595,7 +2636,7 @@ dialogue = {
 
     {
 
-        "text": "You assure them that your elephants have no intention of getting involved in their conflict.",
+        "text": "\nYou assure them that your elephants have no intention of getting involved in their conflict.",
 
         "speed": "normal"
 
@@ -2619,7 +2660,7 @@ dialogue = {
 
     {
 
-        "text": "You wonder if you've misunderstood.",
+        "text": "\nYou wonder if you've misunderstood.",
 
         "speed": "normal"
 
@@ -2643,7 +2684,7 @@ dialogue = {
 
     {
 
-        "text": "You get trampled.",
+        "text": "\nYou get trampled.",
 
         "speed": "normal"
 
@@ -2651,7 +2692,7 @@ dialogue = {
 
     {
 
-        "text": "You were getting quite good at Dwarven, too.",
+        "text": "\nYou were getting quite good at Dwarven, too.",
 
         "speed": "slow",
 
@@ -2822,7 +2863,7 @@ dialogue = {
         "speed": "normal"
     },
     {
-        "text": "Your boss asks you how the journey was?",
+        "text": "\nYour boss asks you how the journey was?",
         "speed": "normal"
     },
     {
