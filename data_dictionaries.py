@@ -2244,7 +2244,7 @@ dialogue = {
       
     },
     {
-        "text": "How can you be an elephant herder without elephants?",
+        "text": "\nHow can you be an elephant herder without elephants?",
         "speed": "slow",
         "pause": "long"
     },
@@ -2253,7 +2253,7 @@ dialogue = {
         "speed": "normal"
     },
     {
-        "text": "You die at 83 with back problems.",
+        "text": "\nYou die at 83 with back problems.",
         "speed": "slow",
         "pause": "long"
     }
@@ -2264,12 +2264,72 @@ dialogue = {
         "no_letters": [
 
     {
+        "text": "\nYou have repeatedly failed to identify the letters A, B or C.",
+        "speed": "normal"
+    },
+    {
+        "text": "I can only conclude that you are illiterate.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "\nYour elephant herding career is over.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "You decide to go back to school.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nAt first, you struggle.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "\nBut your teachers are patient and you make steady progress.",
+        "speed": "normal"
+    },
+    {
+        "text": "Eventually you learn to read and write.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nYou realise how many other adults have been denied the same opportunity.",
+        "speed": "normal"
+    },
+    {
+        "text": "You establish a literacy centre offering free lessons to adults.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nOver the years you help hundreds of people.",
+        "speed": "normal"
+    },
+    {
+        "text": "Many become lifelong friends.",
+        "speed": "normal"
+    },
+    {
+        "text": "\nYou never return to elephant herding.",
+        "speed": "normal"
+    },
+    {
+        "text": "You don't particularly regret it.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "\nYou die peacefully at the age of 91 \nsurrounded by friends.",
+        "speed": "slow",
+        "pause": "long"
+    },
+    {
+        "text": "\nYou lived a good life.",
+        "speed": "slow"
+    }
+],
 
-        "speed": "normal",
-
-        "text": "no_letters ending PLACE HOLDER",
-
-    }],
 
 
 
