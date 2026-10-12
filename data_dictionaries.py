@@ -1790,10 +1790,7 @@ dialogue = {
 
         "float": [   
 
-    {
-        "text": "\nYou have {elephant_number} elephants.",
-        "speed": "extremely_slow"
-    },
+    
     {
         "text": "\nYou look at your elephants.",
         "speed": "slow",
@@ -1805,7 +1802,7 @@ dialogue = {
         "pause": "long"
     },
     {
-        "text": "You do what needs to be done.",
+        "text": "\nYou do what needs to be done.",
         "speed": "extremely_slow",
         "pause": "concerning"
     },
@@ -1830,6 +1827,10 @@ dialogue = {
         "text": "\nYou die at the age of 80.",
         "speed": "slow",
         "pause": "long"
+    },
+    {
+        "text": "\nPerhaps you should have picked a better number",
+        "speed": "extremely_slow"
     }],
 
 
