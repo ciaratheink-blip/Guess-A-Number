@@ -1,12 +1,10 @@
 # Deathlogic: Guess the Number
 
-> **I'd recommend playing with the following instructions:** 
+**I'd recommend playing with the following instructions:** 
 
 >Follow the prompts on screen. Failure is how we learn.
 
 > For more comprehensive instructions scroll down.
-
-A text-based, branching Python adventure about choosing a number of elephants and attempting to transport them to their destination. Your decisions affect their survival, your relationship with the local dwarves, and, quite possibly, your future career prospects.
 
 ## How to play
 
@@ -19,7 +17,7 @@ A text-based, branching Python adventure about choosing a number of elephants an
    ```
 
    On some systems you may need `python3 Guess_a_number.py` instead.
-4. Read the on-screen prompts and enter your answers. Type **Q** at an input prompt to quit.
+4. Read the on screen prompts and enter your answers. Type **Q** at an input prompt to quit.
 
 
 ## Project files
@@ -74,7 +72,7 @@ A text-based, branching Python adventure about choosing a number of elephants an
 ```
 
 ## Detailed instructions (spoilers)
-
+A text based, branching Python adventure about choosing a number of elephants and attempting to transport them to their destination. Your decisions affect their survival, your relationship with the local dwarves, and, quite possibly, your future career prospects.
 ### The basic objective
 
 Your job is to deliver a herd of elephants. The game starts by asking you to choose how many elephants you have, then presents a series of A/B/C choices about feeding them, dealing with dwarves, and crossing a bridge.
