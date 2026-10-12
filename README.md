@@ -21,13 +21,12 @@ A text-based, branching Python adventure about choosing a number of elephants an
    On some systems you may need `python3 Guess_a_number.py` instead.
 4. Read the on-screen prompts and enter your answers. Type **Q** at an input prompt to quit.
 
-No third-party Python packages are required.
 
 ## Project files
 
 - **`Guess_a_number.py`** contains the game logic, choices, state, progression, and endings.
 - **`data_dictionaries.py`** contains the dialogue, text speeds, and pause settings. It is imported by the main script.
-- **`[FLOWCHART_FILENAME]`** is the flowchart showing the game's branches and outcomes. It had to be stitched together from screenshots. Can be viewed in full[here](https://miro.com/app/board/uXjVEdy3zI4=/?share_link_id=37161252913)
+- **`deathlogic_stitched_flowchart.png`** is the flowchart showing the game's branches and outcomes. It had to be stitched together from screenshots. Can be viewed in full [here](https://miro.com/app/board/uXjVEdy3zI4=/?share_link_id=37161252913)
 
 **Repository:** [Deathlogic on GitHub](https://github.com/ciaratheink-blip/Guess-A-Number.git)
 
